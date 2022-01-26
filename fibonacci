@@ -1,0 +1,30 @@
+import numpy as np 
+from matplotlib import pyplot as plt
+
+def myfibonacci(n):
+    num1 = 0
+    num2 = 1
+    a=0
+
+    if(n==-1):
+        return num2
+    elif(n==-2):
+        return num1
+
+    for i in range(n+1):
+        a= (myfibonacci(n-1) + myfibonacci(n-2))
+    return a 
+
+def plot(n):
+    y=[]
+    x = np.arange(-2,n+1)
+
+    for i in x:
+        y.append(myfibonacci(i))
+
+    plt.scatter(x,y)
+    plt.show()
+
+print("Fibonacci sequence:")
+n = int(input("Enter n"))
+plot(n)
